@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>UselessFunction</title>
+</head>
+<body>
+	
+</body>
+<script>
+//首頁材質分類(style.hide)(暫定寫死)
+	$('.goodCraft .navBtn').on("click", styleSerch);
+	function styleSerch(){
+		var styleKey = $(this).attr('data-style');
+		$('#grid li[data-style='+styleKey+']').attr('style', '');
+		picNum = ($('#grid li[data-style='+styleKey+']').length)+1;
+		$('#grid').html('');
+		insetPPStyleLi();
+		picRandom();
+		insetPicTxt();
+	}
+</script>
+
+<script>
+//首頁材質分類(style.JSON(X))
+	var testA = function(a){
+		alert(typeJSON.a.length);
+	}
+	$('.goodCraft .navBtn').on("click", styleSerch);
+	function styleSerch(){
+		var styleKey = $(this).attr('data-style');
+		alert(styleKey);
+		testA(styleKey);
+		//alert(typeJSON.($(this).attr('data-style')).length);
+	}
+</script>
+
+<script>
+//圖片亂數(v1.0)
+	Array.prototype.randomize = function() {
+        for (var i = this.length; i > 0; i--)
+            this.push(this.splice((Math.floor(Math.random() * i)), 1));
+    }
+	var picAr = [];
+	var picTxt =['第1段說明','第2段說明','第3段說明','第4段說明','第5段說明','第6段說明','第7段說明','第8段說明',
+				 '第9段說明','第10段說明','第11段說明','第12段說明','第13段說明','第14段說明','第15段說明','第16段說明','第17段說明','第18段說明'];
+	var brandPicSrc =['品牌1','品牌2','品牌3','品牌4','品牌5','品牌6','品牌7','品牌8','品牌9','品牌10',
+				   '品牌1','品牌2','品牌3','品牌4','品牌5','品牌6','品牌7','品牌8','品牌9','品牌10',
+				   '品牌1','品牌2','品牌3','品牌4','品牌5','品牌6','品牌7','品牌8','品牌9','品牌10'];
+	for(i=0; i<=32; i++){
+		picAr[i] =  i + 1;
+		picAr.randomize();
+		picAr[i] = ''+ picAr[i];
+	}
+</script>
+		
+<script>
+//置入圖片、說明(v1.0)
+	$(function(){
+		for(i=0; i<32; i++){
+			$('#grid li:nth-child('+i+') img:first-child').attr('src','images/'+picAr[i]+'.jpg');
+			$('#grid li:nth-child('+i+') .img_txt').text(picTxt[ picAr[i] ]);
+		}
+	})
+</script>
+
+<script>
+//進入設計師頁面
+	/*var setDesignerPageNav = function(brandName){
+		$('.designerBar').prepend('<ul class="designerNav '+brandName+'"><li class="liActive _index"><a href="javascript:;"><p>作品</p></a></li><li class="_about"><a href="javascript:;"><p>介紹</p></a></li><li class="_contact"><a href="javascript:;"><p>聯絡</p></a></li></ul>');
+		for(i=$('.designerNav li').length; i>0; i--){
+			$('.designerNav li:nth-child('+i+')').css({'z-index': Math.abs(i-4)});
+		}
+		for(i=0; i<$('.designerNav li').length; i++){
+			$('.designerNav li:nth-child('+(i+1)+')').delay(1800+500*i).animate({top: i*41+90, opacity: 1},500);
+		}
+	}
+	$('.goodDesign .navBtn').on('click', intoDesignerPage);
+	function intoDesignerPage(){
+		var theBrand = $(this).attr('data-link');
+		var theLiIndex = $(this).parent('li').index();
+		$('._nav .logo, ._nav nav').fadeOut();
+		$('._switch').addClass('_switchInDP');
+		$(this).find('img').clone().appendTo($('.designerBar')).wrap('<div class="designerLogo"></div>');
+		$('.designerLogo img').addClass('designerLogoImg');
+		$('.designerLogo').css({position: 'absolute'}).animate({left: 6, top: ''+(theLiIndex*40+223)+''},0).delay(100).animate({top: 75},2000,'easeOutCubic',
+			function(){$('.designerLogo').animate({top: 0, height:190},500);}
+		);
+		setDesignerPageNav(theBrand);
+	}*/
+</script>
+
+<script type="text/javascript">
+	//LightBox(v1.0)
+	$('._LBText, ._LBPic, ._LBMask, .nextLB, .backLB').hide();
+	/*$('.hot_info').on('click', setOnLB);
+	function setOnLB(){
+		var picSrc = $(this).siblings('img').attr('src');
+		$('._LBPic img').attr('src', ''+picSrc+'').css({'max-width': '90%', 'max-height': '90%'});
+		$('._LBText, ._LBPic, ._LBMask, .nextLB, .backLB').fadeIn();
+		$('._LBMask').on('click', setOffLB);
+      		function setOffLB(){
+      		$('._LBText, ._LBPic, ._LBMask, .nextLB, .backLB').fadeOut();
+    	}
+	}
+	$('#grid img').on('click', setOnLB2);
+	function setOnLB2(){
+		var picSrc = $(this).attr('src');
+		$('._LBPic img').attr('src', ''+picSrc+'').css({'max-width': '90%', 'max-height': '90%'});
+		$('._LBText, ._LBPic, ._LBMask, .nextLB, .backLB').fadeIn();
+		$('._LBMask').on('click', setOffLB);
+      		function setOffLB(){
+      		$('._LBText, ._LBPic, ._LBMask, .nextLB, .backLB').fadeOut();
+    	}
+	}*/
+</script>
+
+<script>
+//啟動DIY模式
+	$('.secBar li[title=edit]').on('click', intoDIYMode);
+	function intoDIYMode(){
+		//增加子項目
+		$('.designerBar li').append('<div class="addNavLi"></div><div class="removeNavLi"></div>');
+		//換header顏色
+		$('.editBar').toggleClass('editBarFocus');
+		$('.editBar div').wrap('<a href="javascript:;"></a>');
+		changeColorStyle();
+	}
+</script>
+
+<script type="text/javascript">
+//更改顏色
+	var changeColorStyle = function(){
+	   	$('.editBar div').on('click', changeColor);
+	   	function changeColor(){
+	   		var thisColor = $(this).data("bgc");
+	   		$('.header').css({"background-color": thisColor});
+	   		$('._switchSpanFocus').css({"background-color": thisColor});
+	   	};
+	}
+</script>
+
+<script type="text/javascript">
+//更改pic大小
+	var changePicSize = function(){
+	   	$('.container>div').on("click", changeSize);
+	   	function changeSize(){
+			$(this).toggleClass('cPz');
+		};
+	}
+</script>
+
+<script type="text/javascript">
+ //增加導覽列子項
+	var addDPNavLi = function(){
+	 	$('#addNavLi').on("click", NavLiAdd);
+	   	function NavLiAdd(){
+		   		var liTitle = prompt();
+		   		if(liTitle == null){
+		   			liTitle = "unname";
+		   		}
+		   		$('#_nav>nav>ul').append('<li class="navBtn">'+liTitle+'<div class="removeNavLi"><a href="javascript:;"></div></li>');
+		   		$('.removeNavLi').on("click", NavLiRemove);
+		   		function NavLiRemove(){
+		    	$(this).parent().remove();
+		    }
+	   	};
+	}
+</script>
+
+<script type="text/javascript">
+//減少導覽列子項
+	var removeDPNavLi = function(){
+		 	$('._nav nav ul li').append('<div class="removeNavLi"><a href="javascript:;"></div>');
+		 	$('.removeNavLi').on("click", NavLiRemove);
+		   	function NavLiRemove(){
+		    	$(this).parent().remove();
+		    }
+		}
+	}
+</script>
+
+
+</html>

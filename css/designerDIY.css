@@ -1,0 +1,90 @@
+	.addNavLi{
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: #F00;
+		display: inline-block;
+		cursor: pointer;
+		position: absolute;
+		background-image: url('../images/ICON/add.png');
+		background-size: 20px 20px;
+		transition: 0.5s;
+		top: 550px;
+		left: 15px;
+		z-index: 2;
+	}
+	.addNavLi:before{
+		content: '';
+		position: absolute;
+		width: 30px;
+		height: 40px;
+		opacity: 0;
+		top: -10px;
+		left: -10px;
+		border: 1px dotted #910;
+		transition: 0.5s;
+	}
+	.addNavLiText{
+		position: absolute;
+		width: 160px;
+		height: 40px;
+		opacity: 1;
+		top: 540px;
+		left: 40px;
+		border: none;
+	}
+	.addNavLiText:focus{ outline: none; }
+	.addNavLi:hover:before{
+		width: 190px;
+		opacity: 1;
+	}
+	.removeNavLi{
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: #FFF;
+		display: inline-block;
+		cursor: pointer;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		background-image: url('../images/ICON/delete.png');
+		background-size: 20px 20px;
+		transition: 0.5s;
+  		opacity: 1;
+	}
+	.hideRMBtn{
+	  opacity: 0;
+	  z-index: -1;
+	}
+	/*--------------------------------------------container*/
+	.cPz{
+		width: 10%;
+		height: 10%;
+	}
+	.editBar{
+		position: fixed;
+		right: -58px;
+		top: 70px;
+		padding: 10px;
+		opacity: 0;
+		border-radius: 10px 0 0 10px; 
+		background-color: #DDD;
+		box-shadow: 0 0 20px 5px #666;
+		transition: 0.5s;
+	}
+	.editBarFocus{
+		right: 0px;
+		opacity: 1;
+	}
+	.editBar div, .editBar div a{
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+	}
+	.settingBtn{
+		background: #FFF url("images/settingBtn.png") no-repeat center center;
+	}
+	.settingBtn:hover #editBar div{
+		display:block;
+	}

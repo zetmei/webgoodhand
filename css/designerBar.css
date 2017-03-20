@@ -1,0 +1,55 @@
+.designerBar{
+    position: absolute;
+    z-index: 5;
+}
+.designerLogo{
+    display: -webkit-flex;
+    display: flex;
+    background-color: #EEE;
+    margin: 20px auto; 
+}
+.designerLogoImg{
+    margin: auto;
+}
+.designerNav{
+  margin: 200px 0 0 5px;
+  position: relative;
+  margin-top: 180px;
+}
+.designerNav li{
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #FFF;
+  top: 100px;
+  width: 190px;
+  height: 40px;
+  position: relative;
+  background-color: #FFF;
+  transition: .3s;
+}
+.designerNav li:hover{
+  border-color: rgba(163,17,0,1);
+}
+.designerNav .liActive{
+  border-color: rgba(163,17,0,1);
+}
+.designerNav li:hover p{
+  transition: .3s;
+}
+.designerNav li p{
+  text-decoration: none;
+  width: 190px;
+  height: 40px;
+  font-style: "微軟正黑體";
+  font-size: 16px;
+  color: #333;
+  line-height: 40px;
+  text-align: center;
+}
+.point{
+  cursor: pointer;
+}
+._borderAni{
+    border-bottom: 3px double #CCC;
+    transition: .5s .5s;
+}

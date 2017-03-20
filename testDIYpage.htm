@@ -1,0 +1,206 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/lightBox.css" rel="stylesheet" type="text/css" />
+<style>
+	/*--------------------------------------------header*/
+	#header{
+		position: relative;
+		width: 100%;
+		height: 40px;
+		background:#910;
+	}
+	/*--------------------------------------------nav*/
+	#_nav{
+		color: #FFF;
+		position: relative;
+		width:200px;
+		height: 1000px;
+		background-color: #EEE;
+		float: left;
+		box-shadow: 2 0 1px 0px #555;
+	}
+	#_nav .navBtn{
+		background-color: #CCC;
+		width: 150px;
+		height: 20px;
+		padding: 10px;
+		margin: 10px auto;
+		font-size: 20px;
+		line-height: 20px;
+		position: relative;
+	}
+	#_nav .navBtn:after{
+		content: '';
+		position: absolute;
+		right: 0px;
+		bottom: 0px;
+		border-width: 10px;
+		border-style: solid;
+		border-color: #999 #FFF #FFF #999;
+		transition: .4s;
+	}
+	#_nav .navBtn:hover:after{
+		border-width: 15px;
+	}
+	#addNavLi{
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: #555;
+		display: inline-block;
+	}
+	.removeNavLi{
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: #000;
+		display: inline-block;
+	}
+
+	/*--------------------------------------------container*/
+	#container{
+		background-color: #CC0;
+	}
+	.box{
+		position: absolute;
+		left:200px;
+		background-color: #FFF;
+		transition: .5s;
+	}
+	.pic{
+		float:left;
+		background-color: #CC0;
+		border: 1px solid #FFF;
+		position: relative;
+		transition: .5s;
+		width: 200px;
+		height: 200px;
+	}
+	.cPz{
+		width: 10%;
+		height: 10%;
+	}
+	.editBar div{
+		width: 50px;
+		height: 50px;
+	}
+	.settingBtn{
+		background: #FFF url("images/settingBtn.png") no-repeat center center;
+	}
+	.settingBtn:hover #editBar div{
+		display:block;
+	}
+</style>
+</head>
+<body>
+	<div id="header">
+		<div class="editBar" style="float: right;">
+			<a href="javascript:;"><div class="settingBtn"></div></a>
+			<div data-bgc="#000" style="background-color: #000;"></div>
+			<div data-bgc="#F00" style="background-color: #F00;"></div>
+	</div>
+	</div>
+	<div id="_nav">
+		<div id="logo" style="width:150px; height:150px; background-color:#ccc; margin:50px auto;"></div>
+		<nav>
+			<ul>
+				<li class="navBtn">Designer</li>
+				<li class="navBtn">Gallery</li>
+				<li class="navBtn">Contract</li>
+			</ul>
+		</nav>
+		<div id="addNavLi">增加</div>
+	</div>
+	<div id="container">
+		<div class="box">
+		</div>
+	</div>
+	<div class="_LBMask"><span class="backLB"></span><div class="_LBPic"><img src=""><span></span><p class="_LBText">文字說明</p></div><span class="nextLB"></span></div>
+</body>
+<script src="js/jquery-1.10.0.min.js"></script>
+
+<script>
+//LightBox
+	$('._LBText, ._LBPic, ._LBMask').hide();
+	$('.box .pic, .box .pic img').on("click", setOnLB);
+	function setOnLB(){
+		alert();
+		/*var picSrc = $(this).children('img').attr('src');
+		$('._LBPic img').attr('src', ''+picSrc+'').css({'max-width': '90%', 'max-height': '90%'});
+		$('._LBText, ._LBPic, ._LBMask').fadeIn();
+		$('._LBMask').on('click', setOffLB);
+      		function setOffLB(){
+      		$('._LBText, ._LBPic, ._LBMask').fadeOut();
+    	}*/
+	}
+</script>
+
+<script type="text/javascript">
+    Array.prototype.randomize = function() {
+        for (var i = this.length; i > 0; i--)
+            this.push(this.splice((Math.floor(Math.random() * i)), 1));
+    }
+	var picAr = [];
+	for(i=0; i<16; i++){
+		picAr[i] =  i + 1;
+		if((""+picAr[i]).length == 1){
+			picAr[i] = "0"+ picAr[i];
+		};
+		picAr.randomize();
+		picAr[i] = ''+ picAr[i];
+	}
+</script>
+
+<script type="text/javascript">
+	//插入隨機圖片
+$(function(){
+	for(i=0; i<9; i++){
+		$('.box').prepend('<div class="pic"><img src="images/gallery'+picAr[i]+'.jpg" width="100%" height="100%"></div>');
+	}
+})
+</script>
+
+<script type="text/javascript">
+//更改顏色
+	$(function(){
+	   	$('.editBar div').click(function(){
+	   		var thisColor = $(this).data("bgc");
+	   		$('#header').css("background-color", thisColor);
+	   	});
+	})
+</script>
+
+<script type="text/javascript">
+ //增加導覽列子項
+	$(function(){
+	 	$('#addNavLi').on("click", NavLiAdd);
+	   	function NavLiAdd(){
+	   		var liTitle = prompt();
+	   		if(liTitle == null){
+	   			liTitle = "unname";
+	   		}
+	   		$('#_nav>nav>ul').append('<li class="navBtn">'+liTitle+'<div class="removeNavLi"><a href="javascript:;"></div></li>');
+	   		$('.removeNavLi').on("click", NavLiRemove);
+	   		function NavLiRemove(){
+	    		$(this).parent().remove();
+	    	}
+	   	};
+	})
+</script>
+
+<script type="text/javascript">
+//減少導覽列子項
+	$(function(){
+	 	$('#_nav nav ul li').append('<div class="removeNavLi"><a href="javascript:;"></div>');
+	 	$('.removeNavLi').on("click", NavLiRemove);
+	   	function NavLiRemove(){
+	    	$(this).parent().remove();
+	    }
+	})
+</script>
+
+
+</html>

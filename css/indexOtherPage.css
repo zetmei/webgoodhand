@@ -1,0 +1,338 @@
+/*--------------------------------------------02-about*/
+/*-----以下為右邊主要內容----*/
+.containerInAbout{
+  background-color: #FFF;
+}
+.sliderAll{
+
+}
+.sliderShow{
+  width: 1000px;
+  height: 530px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+/*---幻燈片內容---*/
+.slider{
+  position: relative;
+}
+.sliderPic{
+  width: 3000px;
+  height: 530px;
+  position: relative;
+  letter-spacing: -4px;
+}
+.sliderPic li{
+  display: inline-block;
+  list-style-type:none;
+  letter-spacing: 0px;
+}
+.sliderPic li img{
+  
+}
+/*-----導覽選單-----*/  
+ul.sliderTxt{
+  width: 1000px;
+  height: 50px;
+  position: absolute;
+  top: 15px;
+  text-align: center;
+  letter-spacing: -4px;
+}
+.sliderTxt li{
+  display: inline-block;
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+  letter-spacing: 0px;
+  position: relative; 
+}
+.sliderTxtLiSpan{
+  display: inline-block;
+  width: 200px;
+  height: 3px;
+  left: 0px;
+  background-color: #CCC;
+  bottom: 0;
+  position: absolute;
+}
+.sliderTxt li .active{
+  background-color: #910;
+  transition: .5s;
+}
+.sliderTxt li p{
+  font-family: "微軟正黑體";
+  display: inline-block;
+  width: 200px;
+  line-height: 26px;
+  cursor: pointer;
+}
+
+/*----頁尾-----*/
+.footer{
+  width: 1000px;
+  height: 115px;
+  margin-bottom: 10px;
+  background-color: #FFF;
+  margin: 0 auto;
+}
+.footerTxt{
+  font-family:"微軟正黑體";    
+  font-size: 14px; 
+  color: #666;
+  line-height: 24px;
+  text-align: center;
+  padding-top: 20px;
+  text-decoration: none;
+} 
+
+
+/* ------------------------------------------------------------------------01-QA*/
+.qa_out{
+  margin:60px auto 0 auto;
+  width:100%;
+  height:100%;
+  position:relative;
+ /* background-color:#6FC;*/
+  }
+.qa_in{
+  width:770px;
+  height:100%;
+  margin:0 auto;
+  position:relative;
+ /* background-color:#0F9;*/
+  }
+/*----以下為內部錨定用的導覽列----*/
+.qa_ul{
+  height:50px;
+  text-align:right;
+  /*background-color:#F93;*/
+  }
+.qa_ul li{  
+  font-family:"微軟正黑體";
+  display: inline-block;
+  text-decoration:none;
+  margin:0 5px;
+  }
+.qa_txt6 a, .qa_txt6 a:visited{
+  width:150px;
+  height:30px;
+  font-size:16px;   
+  font-weight:900;
+  letter-spacing:2px;
+  line-height:30px;
+  display:block;
+  background-color:#FFF;
+  color:#167b9e;
+  border:1px #167b9e solid;
+  border-radius:4px;
+  text-align:center;
+  transition:.5s;
+  }
+.qa_txt7 a, .qa_txt7 a:visited{
+  width:150px;
+  height:30px;
+  font-size:16px;   
+  font-weight:900;
+  letter-spacing:2px;
+  line-height:30px;
+  display:block;
+  background-color:#FFF;
+  color:#25B9B8;
+  border:1px #25B9B8 solid;
+  border-radius:4px;
+  text-align:center;
+  transition:.5s;
+  }
+.qa_txt6 a:hover{
+  width:150px;
+  height:30px;
+  line-height:30px;
+  display:block;
+  background-color:#167b9e;
+  color:#FFF;
+  border-radius:4px;
+  text-align:center;
+  }
+ .qa_txt7 a:hover{
+  width:150px;
+  height:30px;
+  line-height:30px;
+  display:block;
+  background-color:#25B9B8;
+  color:#FFF;
+  border-radius:4px;
+  text-align:center;
+  }
+/*--------以下為文字排版-------*/
+p{
+  font-family:"微軟正黑體";  
+  }
+/*標題文字*/
+.qa_txt{
+  font-size:16px; 
+  color:#666666;
+  line-height:36px;
+  font-weight:900;
+  letter-spacing:2px;
+  } 
+/*標題文字,淺藍色,,紅色*/
+.qa_txt1{ color:#167b9e; font-weight:700;}  
+.qa_txt2{ color:#25B9B8; font-weight:700; } 
+.qa_txt3{ color:#8F1D22; font-weight:700;}  
+.qa_txt4{ color: #484645; text-decoration:underline;}
+/*內容文字*/
+.qa_txt5{
+  font-size:14px; 
+  color:#7A7A7A;  
+  line-height:32px; 
+  letter-spacing:2px;
+  }
+/*---q&a-頁尾-----*/
+.qa_ct_2{
+  width:auto;
+  height:auto;
+  position:relative;
+  background-color:#fff;
+  top: 730px;
+  }
+.qa_ct_2_txt{
+  font-family:"微軟正黑體";    
+  font-size:14px; 
+  color:#666666;
+  line-height:24px;
+  padding:0 0 30px 0;
+  letter-spacing:2px;
+  text-decoration:none;
+  position:relative;
+  text-align:center;
+  } 
+  /*-----------------------------------------------------------------*/
+  .feek_ct{
+  position:relative;
+  padding:30px;
+  margin:0 auto;
+  width:85%;
+  height:500px;/*高暫定,auto,100%不行*/
+  /*background:#f60;*/
+  }
+.container .feek_ct ul{
+  position:absolute;
+  top:120px;
+  left:-50px;
+  width:1000px;
+  height:280px;
+  /*background-color:#000;*/
+  }
+/*照片及說明*/ 
+.feek_pic{
+      position: relative;
+        text-align: center;
+        left: 2000px;
+    }
+.feek_pic > div{
+        position: relative;
+    }
+.feek_pic span{
+        font-family:"微軟正黑體";  
+        position: absolute;
+        font-size: 20px;
+    font-weight:700;
+        top: 20%;
+        left: 15px;
+        color:#FFF;
+        opacity: 0;
+    }
+.feek_pic span:last-child{
+        text-align: left;
+        font-family:"微軟正黑體";  
+        position: absolute;
+        font-size: 15px;
+    line-height:25px;
+        top: 50%;
+        left: 15px;
+        color:#FFF;
+        opacity: 0;
+    }
+.pic_hover{
+    position:relative;
+        display: inline-block;
+        width: 200px;
+        height: 420px;
+        overflow: hidden;
+    }
+.pic_hover:before{
+        content: '';
+        height:30px;
+        width: 200px;
+        background-color: #FFF;
+        opacity: 0.5;
+        position: absolute;
+        bottom: 0px;
+        transition: 0.8s 0.2s;
+    }
+.pic_hover_1:before{ background-color: #057298; }
+.pic_hover_2:before{ background-color: #03AFAE; }
+.pic_hover_3:before{ background-color: #F38B18; }
+.pic_hover_4:before{ background-color: #EB8477; }
+.pic_hover:hover:before{
+        height: 450px;
+        opacity: 0.9;
+    }
+.pic_hover:hover span{
+        opacity: 1;
+        transition: .5s .5s;
+    }
+/*大塊排版文字說明*/
+.feek_txt{
+  font-family:"微軟正黑體";  
+}
+.feek_txt1{ 
+  position:relative;
+  top:0px;
+  left:0px;
+  font-size:32px; 
+  color:#AA0F1D;
+  line-height:36px;
+  font-weight:700;
+}
+.feek_txt2{ 
+  position:relative;
+  top:10px;
+  left:0px;
+  font-size:20px; 
+  color:#060606;
+  font-weight:700;
+}
+.feek_txt3{
+  position:absolute;
+  top: 35px;
+  right:80px; 
+  /*text-align:right;*//*要靠右邊對齊媽*/
+  width: 500px;
+  height: auto;
+  font-size: 17px;
+  color: #060606;
+  line-height: 24px;
+  font-weight:500;  
+}
+/*----頁尾-----*/
+.ct_2{
+  width:auto;
+  height:auto;
+  position:relative;
+  /*background-color:#3CF;*/
+  }
+.ct_2_txt{
+  font-family:"微軟正黑體";    
+  font-size:14px; 
+  color:#666666;
+  line-height:24px;
+  padding:0 0 30px 0;
+  letter-spacing:2px;
+  text-decoration:none;
+  position:relative;
+  text-align:center;
+  top: 50px;
+  } 

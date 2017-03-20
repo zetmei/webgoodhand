@@ -1,0 +1,38 @@
+<div class="sliderAll">
+    <div class="sliderShow">
+	    <ul class="sliderPic">
+	        <li><img src="images/about_01.jpg" width="1000"></li>
+	        <li><img src="images/about_02.jpg" width="1000"></li>
+	        <li><img src="images/about_03.jpg" width="1000"></li>
+	    </ul>
+	    <ul class="sliderTxt">
+	        <li><p>好手概念</p><span class="sliderTxtLiSpan"></span></li>
+	        <li><p>故事起源</p><span class="sliderTxtLiSpan"></span></li>
+	        <li><p>如何加入</p><span class="sliderTxtLiSpan"></span></li>
+	    </ul>
+    </div>
+</div>
+<div class="footer">
+    <p class="footerTxt">© 2014 Goodhand. All Rights Reserved.</br>Design by FEEK.</p>
+</div>
+<script>
+$(function(){
+	var sliderPicCount = $('.sliderPic li').length;				//定義圖片的數目
+	var liwidth = $('.sliderPic li').width();			//定義圖片總寬
+	$('.sliderPic').css({width: 100+liwidth*sliderPicCount});			//=總li長度的ul
+	var liIndex = 0;								//設定一個變數當索引值
+	$('.sliderTxt li:first-child span').addClass('active');		//套上作用中的class
+	$('.sliderTxt li').click(
+		function(){
+			liIndex = $(this).index();//被選到的第幾個
+			$('.sliderPic').stop().animate({left: -liIndex*liwidth },500);
+		}
+	);
+	/*----------控制調轉換class-----------*/
+	$('.sliderTxt li').click(
+		function(){
+			$(this).children('span').addClass('active').parent('li').siblings('li').children('span').removeClass('active');	
+		}
+	);
+})
+</script>

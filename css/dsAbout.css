@@ -1,0 +1,113 @@
+
+    section {
+        height: 100%;
+        font-family:"微軟正黑體", "細明體", Arial, "新細明體", "標楷體";
+    }
+    /*右邊大照片*/
+    #jiabout {
+        background: #fafafa url(images/jicon/jicon_ebg.jpg) right center fixed no-repeat;
+        background-size:auto 100%;
+    }
+    #futaabout {
+        background: #fafafa url(../images/11.jpg) right center fixed no-repeat;
+        background-size:auto 100%;
+    }   
+    .container {
+        height: 921px;
+        margin-top: 40px;
+        margin-left:204px;
+        background: transparent;
+    }
+    .block {
+        height: 100%;
+        margin-left: 0;
+        /*與左邊導覽列的距離*/
+        position: relative;
+        -webkit-transition: margin-left 1s;
+        transition: margin-left 1s;
+    }
+    /*左邊個人介紹,信件區塊*/
+    .inner_left {
+        position: relative;
+        width: 35%;
+        height: 100%;
+        float: left;
+        background-color: #fafafa;
+        /*說明淺灰背景*/
+        color: #333;
+        padding: 30px;
+        /*這邊設了30px會影響到右邊60%上不來*/
+        padding-bottom: 0px;
+        overflow-y: auto;
+    }
+    .block header {
+        color:#A06D20;
+        font-size: 22px;
+        padding: 30px 0 5px;
+        margin: 0 0 30px;
+        border-bottom: 1px solid #d4d4d4;
+    }
+    .inner_left span {
+        display: block;
+        max-width: 300px;
+        background: transparent;
+        font: 20px;
+        color: #953;
+        margin-bottom: 16px;
+    }
+    .block p {
+        font-size: 16px;
+        line-height: 28px;
+        color: #333;
+    }
+    .socials {
+        float: left;
+        padding-top: 15px;
+    }
+    .socials>li {
+        background: transparent;
+        /*border: 1px solid #953;*/
+        /*border-radius: 2px;*/
+        position: relative;
+        width: 50px;
+        height: 46px;
+        display: inline-block;
+        margin: 3px;
+    }
+    .list-group-item {
+        display: block;
+    }
+    .socials>li a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .fa {
+        /*font-size: 27px;
+        position: relative;*/
+        left:0;
+        top: 0;
+        list-style: none;
+        text-decoration: none;
+        color: #CCC;
+        transition:color .5s;
+        -webkit-transition:color .5s;
+    }
+    a:hover .fa {
+        width: 100%;
+        height: 100%;
+        color:#953;
+    }
+    /*右邊區塊*/
+    .inner-right {
+        float: left;
+        background:transparent;
+        width: 60%;
+        /*height: 100%;*/
+        display: block;
+        position: relative;
+    }
+    #jiabout {
+        background: #fafafa url('../images/jicon/jicon_bg.jpg') right center fixed no-repeat;
+        background-size:auto 100%;
+    }

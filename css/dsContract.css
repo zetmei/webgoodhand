@@ -1,0 +1,91 @@
+section {
+    height: 100%;
+    font-family:"微軟正黑體", "細明體", Monospace, Arial, "新細明體", "標楷體";
+}
+#jiconcontact {
+    background: #fafafa url('../images/jicon/jicon_ebg.jpg') right center fixed no-repeat;
+    background-size:auto 100%;
+}
+.container {
+        background: transparent;
+    }
+#block {
+    height: 728px;
+    margin-left: 0;
+    /*與左邊導覽列的距離*/
+    position: relative;
+    -webkit-transition: margin-left 1s;
+    transition: margin-left 1s;
+}
+.inner_left {
+    position: relative;
+    width: 38%;
+    height: 100%;
+    float: left;
+    background-color: #fafafa;
+    color: #333;
+    padding: 30px;
+    padding-bottom: 0;
+    overflow-y: auto;
+}
+.inner_left header {
+	font-size: 22px;
+	font-family: ;
+    color: #A06D20;
+    padding: 30px 0 5px;
+    margin:0 0 30px;
+    border-bottom: 1px solid #d4d4d4;
+}
+#emailform input, #emailform textarea {
+    display: block;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 320px;
+    font-size: 13px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #910;
+    color: #930;
+}
+#emailform input:focus, #emailform textarea:focus {
+    background: #fff;
+    outline: none;
+    border: 1px dotted #910;
+    box-shadow: none;
+}
+#emailform select {
+	display: block;
+	padding: 10px;
+	width: 100%;
+	max-width: 200px;
+    border: none;
+    margin-bottom: 20px;
+}
+#emailform select:focus{
+	background: #fff;
+	outline: none;
+	border: none;
+	box-shadow: none;
+}
+#emailform label{
+	font-size: 13px;
+	color: #930;
+	padding: 10px;
+}
+#emailform .sbbtn {
+    position: relative;
+}
+#emailform .sbbtn:hover {
+    box-shadow: 0 1px 10px 
+    background:transparent;
+}
+#emailform [type="submit"]{
+    width: 120px;
+    background: #910;
+    border: transparent;
+    border-radius: 2px;
+    color: #fff;
+    transiiton:width 1s;
+    -webkit-transiiton:width 1s;
+}

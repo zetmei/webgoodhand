@@ -1,0 +1,132 @@
+.logInPage{
+   top: -358px;
+   right: 10px;
+   position: fixed;
+   box-shadow: 0 0 20px 3px #999;
+   transition: top .5s;
+ } 
+.logInPageFocus{
+   top: 40px;
+}
+    a{
+        text-decoration: none;
+    }
+    .logInDiv {
+        font-family:"微軟正黑體";
+        width:433px;
+        height: 340px;
+        background-color: #FFF;
+        position: relative;
+        border-radius: 3px;
+    }
+    /*登入頁面*/
+    .headTitle {
+        height: 50px;
+        position: relative;
+        padding: 10px 0px;
+        margin: 0 0 10px 25px;
+    }
+    .headTitle p{
+        font-size: 36px;
+        line-height: 50px;
+        color: #910;
+        margin: 0;
+    }
+    .logInDiv>a {
+        position: relative;
+        display: block;
+        height: 30px;
+        font-size: 12px;
+        padding: 10px;
+    }
+    .idLine{
+        position: relative;
+        width: 300px;
+        height: 32px;
+        left:18px;
+        padding: 0 3px;
+        color: #666;
+        margin-top: 15px;
+        border: none;
+        border-bottom: 1px solid #910;
+        border-radius: 5px 5px 0 0;
+        font-size: 12px;
+    }
+    .idLine:focus{
+      background-color: rgb(245,245,245);
+      outline: none;
+    }
+
+    .pwdForget {
+        width: 60px;
+        position: relative;
+        left:270px;
+        margin-top: 0;
+        color: #B0091D;
+    }
+    .confrimBtn {
+        display: inline-block;
+        text-decoration: none;
+        position: relative;
+        width: 104px;
+        height: 30px;
+        right: -310px;
+        top: 0px;
+        background-color: #910;
+        border-radius: 2px;
+        margin: 15px;
+
+        transition: 0.3s;
+    }
+    .confrimBtn:hover {
+      right: -310px;
+      top: -5px;
+      box-shadow: 0 2px 5px 1px #666;
+    }
+    .confrimBtn p {
+        color: #FFF;
+        line-height: 30px;
+        width: 80px;
+        margin-left: 15px; 
+    }
+    /*三角形*/
+    .tri {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 0 8px 10px;
+        border-color: transparent transparent transparent #fff;
+    }
+    .signLink {
+        color: #B0091D;
+        font-size: 18px;
+        margin-left:13px;
+    }
+
+.joinNow {
+   position: absolute;
+   left: 180px;
+   bottom: 70px;
+   width: 55px;
+   height: 65px;
+   transition: .5s;
+}
+.joinNow:hover {
+   -webkit-animation: joinNowHover .5s linear 0s infinite alternate;
+   animation: joinNowHover .5s linear 0s infinite alternate;
+}
+.confrimBtn + a:hover + div{
+   -webkit-animation: joinNowHover .5s linear 0s infinite alternate;
+   animation: joinNowHover .5s linear 0s infinite alternate;
+}
+@-webkit-keyframes joinNowHover{
+   0%{bottom: 70px;}
+   100%{bottom: 80px;}
+}
+@keyframes joinNowHover{
+   0%{bottom: 70px;}
+   100%{bottom: 80px;}
+}

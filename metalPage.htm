@@ -1,0 +1,292 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<title>好手工藝店</title>
+	<link rel="shortcut icon" href="images/ICON/ico.png">
+<script src="js/jquery-1.10.0.min.js"></script>
+
+<script>
+//首頁動畫
+	$(window).load(function(){	
+		setTimeout(function(){$(".loader").fadeOut("slow");}, 500);
+	})
+</script>
+
+<script>
+//FOR材質分類
+	var PPStyle = function(liCount, startSid){
+		var picCount = liCount+1;
+		for(i=0; i<picCount; i++){
+			$('#grid').prepend('<li><a href="javascript:;"><img src=""><div class="hot_info"><p></p></div></a><p class="img_txt"></p><img class="brandPic" src=""></img><span></span></li>');
+		}
+		$(function(){
+			for(i=1; i<picCount; i++){
+				//$('#grid li:nth-child('+i+') img:first-child').attr('src','images/'+i+'.jpg');
+				$('#grid li:nth-child('+i+') img:first-child').attr('src',''+picJSON[i+startSid-2].picSrc+'');
+				$('#grid li:nth-child('+i+') .img_txt').text(''+picJSON[i+startSid-2].picTxt+'');
+				$('#grid li:nth-child('+i+') p + img').attr('src',''+picJSON[i+startSid-2].picBrand+'');
+				$('#grid li:nth-child('+i+') .hot_info').addClass(''+picJSON[i+startSid-2].picStyle+'');
+				//$('#grid li:nth-child('+i+')').attr('data-style', ''+picJSON[picAr[i]].picStyle+'');
+				$('#grid li:nth-child('+i+') .hot_info p').text(''+picJSON[i+startSid-2].picHover+'');
+				$('#grid li:nth-child('+i+') span').addClass(''+picJSON[i+startSid-2].picStyle+'');
+			};
+		});
+	}
+</script>
+
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/indexLayout.css" rel="stylesheet" type="text/css" />
+<link href="css/designerBar.css" rel="stylesheet" type="text/css" />
+<link href="css/designerDIY.css" rel="stylesheet" type="text/css" />
+<link href="css/lightBox.css" rel="stylesheet" type="text/css" />
+<link href="css/logIn.css" rel="stylesheet" type="text/css" />
+<link href="css/indexOtherPage.css" rel="stylesheet" type="text/css" />
+<link href="css/dsAbout.css" rel="stylesheet" type="text/css" />
+<link href="css/dsIndex.css" rel="stylesheet" type="text/css" />
+<link href="css/dsContract.css" rel="stylesheet" type="text/css" />
+<!-- 小小字型塊 -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<!--四方偵測-->
+<link rel="stylesheet" href="css/HHstyle.css">
+<script src="js/HHstyle.min.js"></script>
+<!--瀑布流-->
+<link rel="stylesheet" type="text/css" href="css/PPstyle.css" />
+<script src="js/PPstyle.custom.js"></script>
+
+<style>
+	.qa_ct_2 {
+		top: 540px;
+	}
+</style>
+
+<script>
+//FOR材質分類
+	var PPStyle = function(liCount, startSid){
+		var picCount = liCount+1;
+		for(i=0; i<picCount; i++){
+			$('#grid').prepend('<li><a href="javascript:;"><img src=""><div class="hot_info"><p></p></div></a><p class="img_txt"></p><img class="brandPic" src=""></img><span></span></li>');
+		}
+		$(function(){
+			for(i=1; i<picCount; i++){
+				//$('#grid li:nth-child('+i+') img:first-child').attr('src','images/'+i+'.jpg');
+				$('#grid li:nth-child('+i+') img:first-child').attr('src',''+picJSON[i+startSid-2].picSrc+'');
+				$('#grid li:nth-child('+i+') .img_txt').text(''+picJSON[i+startSid-2].picTxt+'');
+				$('#grid li:nth-child('+i+') p + img').attr('src',''+picJSON[i+startSid-2].picBrand+'');
+				$('#grid li:nth-child('+i+') .hot_info').addClass(''+picJSON[i+startSid-2].picStyle+'');
+				//$('#grid li:nth-child('+i+')').attr('data-style', ''+picJSON[picAr[i]].picStyle+'');
+				$('#grid li:nth-child('+i+') .hot_info p').text(''+picJSON[i+startSid-2].picHover+'');
+				$('#grid li:nth-child('+i+') span').addClass(''+picJSON[i+startSid-2].picStyle+'');
+			};
+		});
+	}
+</script>
+
+</head>
+
+
+<body>
+	<div class="header">
+		<ul class="mainBar">
+			<li data-link="index"><a href="indexPage.htm"><p class="_linkToIndex">好手工藝店</p></a></li>
+			<li data-link="01"><p>好手故事</p></a></li>
+			<li data-link="02"><p>Q&A</p></a></li>
+			<li data-link="03"><p>好手FEEK</p></a></li>
+		</ul>
+		<ul class="secBar">
+			<li title="logIn"></li>
+		</ul>
+	</div>
+	<div class="_nav">
+		<div class="logo"><a href="indexPage.htm"><img src="images/ICON/ourLogo.png" alt="Good Hand" style="height: 180px; width: 180px; margin-left: 5px"></a></div>
+		<ul class="_switch">
+			<li><p class="_switchRedColor"><span class="_switchSpanFocus">好</span>　手藝</p></a></li>
+			<div class="_switchMask"></div>
+			<li><p class='_switchWhiteColor'><span class="_switchSpanUnfocus">好</span>　設計</p></a></li>
+		</ul>
+		<nav>
+			<ul class="goodCraft">
+				<li class="navBtn" data-style="metal"><span></span><p>金屬</p></li>
+				<li class="navBtn" data-style="wood"><span></span><p>木質</p></li>
+				<li class="navBtn" data-style="glass"><span></span><p>玻璃</p></li>
+				<li class="navBtn" data-style="ceramics"><span></span><p>陶瓷</p></li>
+				<li class="navBtn" data-style="leather"><span></span><p>皮件</p></li>
+			</ul>
+			<ul class="goodDesign" style="z-index: 2">
+				<li class="navBtn" data-link="futagami"><a href="futagami_index.htm"><span></span><img src="images/designerLogo/futagami.png"></a></li>
+				<li class="navBtn" data-link="jicon"><a href="jicon_index.htm"><span></span><img src="images/designerLogo/jicon.png"></a></li>
+				<li class="navBtn" data-link="kouge_i"><a href="kouge_i_index.htm"><span></span><img src="images/designerLogo/kouge_i.png"></a></li>
+				<li class="navBtn" data-link="lintzan"><a href="LINTZAN_index.htm"><span></span><img src="images/designerLogo/lintzan.png"></a></li>
+				<li class="navBtn" data-link="mother_tool"><a href="mother_tool_index.htm"><span></span><img src="images/designerLogo/mother_tool.png"></a></li>
+				<li class="navBtn" data-link="msa"><a href="MSA_index.htm"><span></span><img src="images/designerLogo/msa.png"></a></li>
+				<li class="navBtn" data-link="serenachen"><a href="serena_chen_index.htm"><span></span><img src="images/designerLogo/serenachen.png"></a></li>
+				<li class="navBtn" data-link="seven_apex"><a href="seven_apex_index.htm"><span></span><img src="images/designerLogo/seven_apex.png"></a></li>
+			</ul>
+		</nav>
+		<ul class="outsideLink">
+			<li><a href="https://www.facebook.com/pages/%E5%A5%BD%E6%89%8B%E5%B7%A5%E8%97%9D%E5%BA%97/276550999189019?ref=hl" target="_blank"><img src="images/ICON/fb_btn.png"></a></li>
+			<li><a href="javascript:;"><img src="images/ICON/gplus_btn.png" style="width: 22px; height: 22px"></a></li>
+			<li><a href="javascript:;"><img src="images/ICON/insta_btn.png"></a></li>
+		</ul>
+	</div>
+	<div class="container">			
+		<ul class="grid effect-8 da-thumbs" id="grid">
+		<script>
+		PPStyle(33, 1);//metal
+		//PPStyle(22, 34);//wood
+		//PPStyle(10, 56);//glass
+		//PPStyle(13, 66);//ceramics
+		//PPStyle(21, 99);//leather
+		</script>
+        </ul>
+	</div>
+	<div class="editBar">
+		<div data-bgc="#910" style="background-color: #910;"></div>
+		<div data-bgc="#e6b422" style="background-color: #e6b422;"></div>
+		<div data-bgc="#f38b18" style="background-color: #f38b18;"></div>
+		<div data-bgc="#057298" style="background-color: #057298;"></div>
+		<div data-bgc="#03afae" style="background-color: #03afae;"></div>
+		<div data-bgc="#eb8477" style="background-color: #eb8477;"></div>
+	</div>
+	<div class="topBtn"></div>
+	<div class="logInPage"></div>
+	<div class="loader"></div>
+</body>
+
+<script src="js/PPstyle.pkgd.min.js"></script>
+<script src="js/imagesloaded.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/AnimOnScroll.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="picJson.js"></script>
+<script src="typeJson.js"></script>
+
+<script>
+//瀑布流
+	new AnimOnScroll( document.getElementById( 'grid' ), {
+		minDuration : 0.4,
+		maxDuration : 0.6,
+		viewportFactor : 0.2
+	} );
+</script>		
+
+<script>
+//好手藝動畫
+	$('.goodCraft li:first-child span').animate({opacity: 1, width: '380px', height: '380px', left: '-170px', top: '-170px'},1000,'easeOutBounce').siblings('p').addClass('whiteColor');
+	function gotoMatel() { location.href = "metalPage.htm" };
+	function gotoWood() { location.href = "woodPage.htm" };
+	function gotoGlass() { location.href = "glassPage.htm" };
+	function gotoCeramics() { location.href = "ceramicsPage.htm" };
+	function gotoLeather() { location.href = "leatherPage.htm" };
+
+		/*$('.goodCraft .navBtn').click(function(){
+			$(this).find('p').addClass('whiteColor');
+			$(this).siblings('li').children('span').stop().animate({width: '20px', height: '20px', left: '10px', top: '10px', opacity: 0},10,'linear');
+			$(this).siblings('li').find('p').removeClass('whiteColor');
+			$(this).children('span').animate({opacity: 1},0).animate({width: '380px', height: '380px', left: '-170px', top: '-170px'},1000,'easeOutBounce');
+		});*/
+		$('.goodCraft .navBtn p').click(function(){
+			$(this).addClass('whiteColor');
+			$(this).parent().siblings('li').children('span').stop().animate({width: '20px', height: '20px', left: '10px', top: '10px', opacity: 0},10,'linear');
+			$(this).parent().siblings('li').find('p').removeClass('whiteColor');
+		});
+		/*$('.goodCraft li:first-child p').click(function(){
+			$(this).siblings('span').animate({opacity: 1},0).animate({width: '380px', height: '380px', left: '-170px', top: '-170px'},1000,'easeOutBounce',gotoMatel);
+		});*/
+		$('.goodCraft li:nth-child(2) p').click(function(){
+			$(this).siblings('span').animate({opacity: 1},0).animate({width: '380px', height: '380px', left: '-170px', top: '-170px'},1000,'easeOutBounce',gotoWood);
+		});
+		$('.goodCraft li:nth-child(3) p').click(function(){
+			$(this).siblings('span').animate({opacity: 1},0).animate({width: '380px', height: '380px', left: '-170px', top: '-170px'},1000,'easeOutBounce',gotoGlass);
+		});
+		$('.goodCraft li:nth-child(4) p').click(function(){
+			$(this).siblings('span').animate({opacity: 1},0).animate({width: '380px', height: '380px', left: '-170px', top: '-170px'},1000,'easeOutBounce',gotoCeramics);
+		});
+		$('.goodCraft li:nth-child(5) p').click(function(){
+			$(this).siblings('span').animate({opacity: 1},0).animate({width: '380px', height: '380px', left: '-170px', top: '-170px'},1000,'easeOutBounce',gotoLeather);
+		});
+</script>
+
+<script>
+	//$('._LBText, ._LBPic, ._LBMask, .nextLB, .backLB').hide();
+</script>
+
+<script>
+//switch
+	$('._switch li:first-child').on('click', sGC);
+	$('._switch li:last-child').on('click', sGD);
+	function sGD(){
+		$(this).find('p').addClass('_switchRedColor').removeClass('_switchWhiteColor');
+		$(this).siblings('li').find('p').addClass('_switchWhiteColor');
+		$(this).find('span').addClass('_switchSpanFocus').removeClass('_switchSpanUnfocus');
+		$(this).siblings('li').find('span').addClass('_switchSpanUnfocus').removeClass('_switchSpanFocus');
+		$('._switchMask').stop().animate({left: '95px'},500,'easeOutBounce');
+		$('.goodCraft, .goodDesign').stop();
+		$('.goodCraft').css({'z-index': 1}).siblings('ul').animate({left: 0},500,function(){$('.goodCraft').animate({left: '200px', 'z-index': 2},0)});
+		$('.goodCraft .navBtn span').stop().animate({width: '20px', height: '20px', left: '10px', top: '10px', opacity: 0},10,'linear');
+		$('.navBtn a .whiteColor').removeClass('whiteColor');
+	}
+	function sGC(){
+		$(this).find('p').addClass('_switchRedColor').removeClass('_switchWhiteColor');
+		$(this).siblings('li').find('p').addClass('_switchWhiteColor');
+		$(this).find('span').addClass('_switchSpanFocus').removeClass('_switchSpanUnfocus');
+		$(this).siblings('li').find('span').addClass('_switchSpanUnfocus').removeClass('_switchSpanFocus');
+		$('._switchMask').stop().animate({left: '0px'},500,'easeOutBounce');
+		$('.goodCraft, .goodDesign').stop();
+		$('.goodDesign').css({'z-index': 1}).siblings('ul').animate({left: 0},500,function(){$('.goodDesign').animate({opacity: 0},300).animate({left: '-200px', 'z-index': 2, opacity: 1},0)});
+		$('.navBtn a .whiteColor').removeClass('whiteColor');
+	}
+</script>
+
+<script>
+//登入欄滑入
+	$('.header .secBar li:first-child').on('click', logInBtn);
+	function logInBtn(){
+		$.get('login.htm',function(data){ $('.logInPage').html(data); });
+		$('.logInPage').toggleClass('logInPageFocus');
+	}
+</script>
+
+<script>
+//至頂按鈕
+	var winTop = $(window).scrollTop();
+	$(window).on('scroll', showTopBtn);
+	function showTopBtn(){
+		winTop = $(window).scrollTop();
+		if(winTop > 1000){
+			$('.topBtn').addClass('topBtnShow');
+		}else{
+			$('.topBtn').removeClass('topBtnShow');
+		}
+	};
+	$('.topBtn').on('click', goToTop);
+	function goToTop(){
+		var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+		$body.animate({
+			scrollTop: 0
+		}, 1000,'easeOutExpo');
+	}
+</script>
+	
+<script>
+//AJAX連結
+	//關於好手
+	$('.mainBar li[data-link="01"]').click(function(){
+		$.get("01_about_AJAX.htm",function(data){
+			$('.container').html(data);
+		});
+	});
+	//Q&A
+	$('.mainBar li[data-link="02"]').click(function(){
+		$.get("02_QA_AJAX.htm",function(data){
+			$('.container').html(data);
+		});
+	});
+	//聯絡
+	$('.mainBar li[data-link="03"]').click(function(){
+		$.get("03_feek_AJAX.htm",function(data){
+			$('.container').html(data);
+		});
+	});
+</script>
+
+</html>
